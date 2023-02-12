@@ -109,6 +109,7 @@ public class ListeTableau<E> implements Liste<E> {
 		}
 		
 		return res;
+		
 	}
 
 }
