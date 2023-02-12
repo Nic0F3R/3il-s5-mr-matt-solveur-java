@@ -10,6 +10,27 @@ public class ListeChainee<T> implements Liste<T> {
 	class Maillon {
 		private T donnee;
 		private Maillon suivant;
+		
+		public Maillon(T pfDonnee, Maillon pfSuivant) {
+			this.donnee = pfDonnee;
+			this.suivant = pfSuivant;
+		}
+		
+		public T getDonnee() {
+			return this.donnee;
+		}
+		
+		public Maillon getSuivant() {
+			return this.suivant;
+		}
+		
+		public void setDonnee(T pfDonnee) {
+			this.donnee = pfDonnee;
+		}
+		
+		public void setSuivant(Maillon pfSuivant) {
+			this.suivant = pfSuivant;
+		}
 	}
 	
 	private Maillon[] tableau;
@@ -24,8 +45,14 @@ public class ListeChainee<T> implements Liste<T> {
 		this.tableau = (Maillon[]) Array.newInstance(type, 1000);
 	}
 	
+	/**
+	 * Permet d'ajouter un maillon avec l'élément de type T en donnée
+	 */
 	public void ajouter(T element) {
-		//this.tableau[this.tableau.length] = element;
+		if(this.tableau.length < 1000) {
+			Maillon maillon = new Maillon(element, null);
+			this.tableau[this.tableau.length] = maillon;
+		}
 	}
 	
 	/**
@@ -51,11 +78,23 @@ public class ListeChainee<T> implements Liste<T> {
 	}
 	
 	/**
-	 * Permet de retirer l'élément à l'index i du tableau
+	 * Permet de retirer l'élément à l'index i du tableau, et retourne la donnée à l'index i
 	 * 
-	 * @return l'élément supprimé
+	 * @return la donnée supprimée
 	 */
 	public T enlever(int i) {
+		
+		T donnee = null;
+		
+		if(i >= 0 && i < this.tableau.length) { // Vérifie la cohérence de l'index passé en paramètre
+			donnee = this.tableau[i].getDonnee();
+			
+			for(int y = i ; y < this.tableau.length - 1 ; y++) {
+				this.tableau[y] = this.tableau[y+1];
+			}
+		}
+		
+		return donnee;
 		
 	}
 	
@@ -67,14 +106,29 @@ public class ListeChainee<T> implements Liste<T> {
 		T res = null;
 		
 		if(i >= 0 && i < this.tableau.length) { // Vérifie la cohérence de l'index passé en paramètre
-			res = this.tableau[i]; // .donnee ?
+			res = this.tableau[i].getDonnee();
 		}
 		
 		return res;
 		
 	}
 	
+	/**
+	 * Permet de vérifier la présence de la donnée e dans le tableau
+	 * 
+	 * @return true si la donnée e existe dans le tableau, sinon false
+	 */
 	public boolean contient(T e) {
+		
+		boolean res = false;
+		
+		for(int i = 0 ; i < this.tableau.length ; i++) {
+			if(this.tableau[i].getDonnee().equals(e)) {
+				res = true;
+			}
+		}
+		
+		return res;
 		
 	}
 
