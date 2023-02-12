@@ -121,11 +121,19 @@ public class ListeChainee<T> implements Liste<T> {
 	public boolean contient(T e) {
 		
 		boolean res = false;
+		boolean arretCalcul = false; // Permet d'arrêter le parcours du tableau si une occurrence a déjà eté trouvée
 		
-		for(int i = 0 ; i < this.tableau.length ; i++) {
+		int i = 0;
+		
+		while(i < this.tableau.length && !arretCalcul) {
+			
 			if(this.tableau[i].getDonnee().equals(e)) {
 				res = true;
+				arretCalcul = true;
 			}
+			
+			i++;
+			
 		}
 		
 		return res;

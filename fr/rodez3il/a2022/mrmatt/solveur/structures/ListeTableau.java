@@ -14,7 +14,6 @@ public class ListeTableau<E> implements Liste<E> {
 	 * @param type : le type de l'élément pour déclarer le tableau
 	 */
 	public ListeTableau(Class<E> type) {
-		//this.tableau = new E[1000];
 		this.tableau = (E[]) Array.newInstance(type, 1000);
 	}
 	
