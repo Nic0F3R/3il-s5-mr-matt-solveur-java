@@ -3,6 +3,13 @@ package fr.rodez3il.a2022.mrmatt.solveur.structures;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+/**
+ * Classe ListeTableau de type E
+ * 
+ * @author Nicolas Ferrayé - 3iL
+ *
+ * @param <E> le type des éléments du tableau
+ */
 public class ListeTableau<E> implements Liste<E> {
 	
 	private E tableau[];

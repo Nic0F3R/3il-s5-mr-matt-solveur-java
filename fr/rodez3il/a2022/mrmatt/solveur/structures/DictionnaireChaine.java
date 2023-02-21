@@ -2,6 +2,14 @@ package fr.rodez3il.a2022.mrmatt.solveur.structures;
 
 import java.lang.reflect.Array;
 
+/**
+ * Classe DictionnaireChainee
+ * 
+ * @author Nicolas Ferrayé - 3iL
+ *
+ * @param <C> le type de la clé
+ * @param <V> le type de la valeur
+ */
 public class DictionnaireChaine<C, V> implements Dictionnaire<C, V> {
 	
 	/**
@@ -37,6 +45,8 @@ public class DictionnaireChaine<C, V> implements Dictionnaire<C, V> {
 	
 	/**
 	 * Constructeur de DictionnaireChaine
+	 * 
+	 * @params type : le type du DictionnaireChaine
 	 */
 	public DictionnaireChaine(Class<V> type) {
 		

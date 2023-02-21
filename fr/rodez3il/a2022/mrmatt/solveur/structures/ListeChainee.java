@@ -2,6 +2,13 @@ package fr.rodez3il.a2022.mrmatt.solveur.structures;
 
 import java.lang.reflect.Array;
 
+/**
+ * Classe ListeChainee. Liste dont l'élément N+1 dépend de l'élément N
+ * 
+ * @author Nicolas Ferrayé - 3iL
+ *
+ * @param <T> le type des éléments du tableau
+ */
 public class ListeChainee<T> implements Liste<T> {
 	
 	/**
@@ -47,6 +54,8 @@ public class ListeChainee<T> implements Liste<T> {
 	
 	/**
 	 * Permet d'ajouter un maillon avec l'élément de type T en donnée
+	 * 
+	 * @params element : l'élément de type T à ajouter
 	 */
 	public void ajouter(T element) {
 		if(this.tableau.length < 1000) {
