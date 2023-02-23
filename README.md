@@ -1,7 +1,7 @@
 # Projet du Solveur de Mr Matt - 3iL Java
 
 - Nicolas Ferrayé
-- Le 12/02/2023
+- Le 23/02/2023
 
 
 # Ce qui a été réalisé
@@ -9,6 +9,7 @@
 - La modification de la classe ListeTableau
 - La modification de la classe ListeChainee
 - La modification de la classe DictionnaireChaine
+- La modification de la classe Noeud (incomplète)
 
 - La correction des différentes erreurs de compilations a été rendue possible avec la rédaction de ces classes, auparavant incomplètes.
 
